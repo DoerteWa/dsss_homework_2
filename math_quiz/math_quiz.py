@@ -71,13 +71,19 @@ def math_quiz():
         calculation, result = CalculateResult(element1, element2, operator)
 
         print(f"\nQuestion: {calculation}")
-        useranswer = input("Your answer: ")
-        useranswer = int(useranswer)
 
+        useranswer = input("Your answer: ")
+        try:
+            useranswer = int(useranswer)
+        except ValueError:
+            print('Input value must be a number. Float is cast to integer')
+            useranswer = input("Last Chance. Your answer: ")
+            useranswer = int(useranswer)
+            
         # Compare the user's answer and the result and award a point when it's correct
         if useranswer == result:
             print("Correct! You earned a point.")
-            points += -(-1)
+            points += 1
         else:
             print(f"Wrong answer. The correct answer is {result}.")
 
