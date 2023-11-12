@@ -4,6 +4,11 @@ setup(
     name = "DSSSHomework2",
     version = "1.0",
     packages = find_packages(),
-    author = "Dörte Wartke",
-    url = "https://github.com/DoerteWa/dsss_homework_2.git",
+    install_requires = [
+        "numpy",
+        "unittests",
+        "random"
+    ],
+    author = "DoerteWa",
+    url = "https://github.com/DoerteWa/dsss_homework_2.git"
 )
